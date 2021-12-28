@@ -1,3 +1,5 @@
+let requests = []
+
 function getProfile() {
     const token = localStorage.getItem("token");
     axios.get("https://limpid-backend.herokuapp.com/users/myProfile", {
@@ -34,6 +36,21 @@ function update() {
 
 function showRequests(data) {
     let result = "";
+    let ok = true;
+    if(requests.length == data.length) {
+        for(let i = 0; i< data.length; i++) {
+            if(requests[i].status != data[i].status) {
+                ok = false;
+                break
+            }
+        }
+    } else {
+        ok = false
+    }
+    if(ok)
+        return
+    requests = data;
+    console.log("da")
     data.forEach(elem => {
         let button = "";
         let phone = "";
@@ -134,3 +151,5 @@ function done(username) {
 
 getProfile()
 getRequests()
+
+setInterval(getRequests, 600000);

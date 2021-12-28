@@ -1,3 +1,6 @@
+let housekeepers = []
+let requests = []
+
 function getProfile() {
     const token = localStorage.getItem("token");
     axios.get("https://limpid-backend.herokuapp.com/users/myProfile", {
@@ -36,6 +39,9 @@ function update() {
 
 function showHousekeepers(data) {
     let result = "";
+    if(housekeepers.length == data.length)
+        return
+    housekeepers = data
     data.forEach(elem => {
         result = result + '<ion-item>' +
                 '<img src="img/defaultProfile.jpg" class="ProfileImg">' +
@@ -87,6 +93,20 @@ function request(username) {
 
 function showRequests(data) {
     let result = "";
+    let ok = true;
+    if(requests.length == data.length) {
+        for(let i = 0; i< data.length; i++) {
+            if(requests[i].status != data[i].status) {
+                ok = false;
+                break
+            }
+        }
+    } else {
+        ok = false
+    }
+    if(ok)
+        return
+    requests = data;
     data.forEach(elem => {
         if(elem.status == "FINISHED") {
             result = result + '<ion-item>' +
@@ -169,11 +189,12 @@ function feedback(username) {
 }
 
 function refreshPageData() {
-    getProfile()
     getHousekeepers()
     getRequests()
+    console.log("refresh")
 }
 
 refreshPageData()
+getProfile()
 
-//setInterval(refreshPageData, 60000);
+setInterval(refreshPageData, 600000);
