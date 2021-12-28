@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpid</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+
+
+    <ion-tabs>
+        <ion-tab tab="client">
+            <ion-content fullsreen class="ion-padding">
+            <div class="CenterContainer BorderBottom">
+                <img src="img/logo.jpeg" alt="logo" width="150" height="100">
+            </div>
+            <ion-item>
+                <strong>Register as Client</strong>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Username (used for login)</ion-label>
+                <ion-input id="usernameC" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input id="passwordC" type="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input id="nameC" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Phone Number</ion-label>
+                <ion-input id="phoneC" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Address</ion-label>
+                <ion-input id="address" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Size in square meter</ion-label>
+                <ion-input id="size" type="number"></ion-input>
+            </ion-item>
+
+            <div class="CenterContainer Padding">
+                <ion-button id="login-buttonC" onclick="registerC()">
+                    Register
+                </ion-button>
+            </div>
+            <br>
+            <div class="CenterContainer Padding">
+                <a href="index.html">Login</a>
+            </div>
+            </ion-content>
+        </ion-tab>
+        <ion-tab tab="housekeeper">
+            <ion-content fullsreen class="ion-padding">
+            <div class="CenterContainer BorderBottom">
+                <img src="img/logo.jpeg" alt="logo" width="150" height="100">
+            </div>
+            <ion-item>
+                <strong>Register as Housekeeper</strong>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Username (used for login)</ion-label>
+                <ion-input id="usernameH" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Password</ion-label>
+                <ion-input id="passwordH" type="password"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Name</ion-label>
+                <ion-input id="nameH" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Phone Number</ion-label>
+                <ion-input id="phoneH" type="number"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label position="floating">Price per square meter (lei)</ion-label>
+                <ion-input id="price" type="number"></ion-input>
+            </ion-item>
+            
+            <div class="CenterContainer Padding">
+                <ion-button id="login-buttonH" onclick="registerH()">
+                    Register
+                </ion-button>
+            </div>
+            <br>
+            <div class="CenterContainer Padding">
+                <a href="index.html">Login</a>
+            </div>
+            </ion-content>
+        </ion-tab>
+
+        <ion-tab-bar slot="top">
+          <ion-tab-button class="Border" tab="client">
+            <ion-label><strong>Client</strong></ion-label>
+          </ion-tab-button>
+          <ion-tab-button class="Border" tab="housekeeper">
+            <ion-label><strong>Housekeeper</strong></ion-label>
+          </ion-tab-button>
+        </ion-tab-bar>
+      </ion-tabs>
+    <script type="text/javascript" src="register.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Limpid</title>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <ion-app>
+        <ion-tabs>
+  
+          <ion-tab tab="profile">
+              <ion-content fullscreen class="ion-padding">
+              <ion-item class="PaddingBottom">
+                  <ion-label>Username</ion-label>
+                  <ion-label id="username"></ion-label>
+              </ion-item>
+              <ion-item class="PaddingBottom">
+                  <ion-label position="floating">Name</ion-label>
+                  <ion-input id="name" type="text"></ion-input>
+              </ion-item>
+              <ion-item class="PaddingBottom">
+                  <ion-label position="floating">Phone Number</ion-label>
+                  <ion-input id="phone" type="number"></ion-input>
+              </ion-item>
+              <ion-item class="PaddingBottom">
+                  <ion-label position="floating">Price per square meter</ion-label>
+                  <ion-input id="price" type="number"></ion-input>
+              </ion-item>
+  
+              <div class="CenterContainer Padding">
+                <ion-button id="update-button" onclick="update()">
+                    update profile
+                </ion-button>
+              </div>
+              </ion-content>
+          </ion-tab>
+    
+          <ion-tab tab="request">
+            <ion-content fullscreen class="ion-padding" id="requestTab">
+            </ion-content>
+          </ion-tab>
+  
+          <ion-tab-bar slot="bottom">
+            <ion-tab-button tab="request">
+              <ion-label>Request</ion-label>
+              <ion-icon name="chatbubbles-outline"></ion-icon>
+            </ion-tab-button>
+            <ion-tab-button tab="profile">
+              <ion-label>Profile</ion-label>
+              <ion-icon name="person-outline"></ion-icon>
+            </ion-tab-button>
+          </ion-tab-bar>
+        </ion-tabs>
+      </ion-app>
+    <script type="text/javascript" src="homeHousekeeper.js"></script>
+</body>
+</html>

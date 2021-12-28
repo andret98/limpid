@@ -1,0 +1,33 @@
+.CenterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BorderBottom {
+    border-bottom: 1px black solid;
+}
+
+.SpaceBetween {
+    display: flex;
+    justify-content: space-between
+}
+
+.Padding {
+    padding: 10px;
+}
+
+.Border {
+    border: 1px black solid;
+}
+
+.PaddingBottom {
+    padding-bottom: 20px;
+}
+
+.ProfileImg {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding-right: 10px;
+  }
